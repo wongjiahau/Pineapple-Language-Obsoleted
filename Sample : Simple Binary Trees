@@ -2,25 +2,66 @@ binary node
 	data : comparable
 	left : node
 	right : node
+	parent : node
 
-binary node [insert] any : void
+binary node [insert] comparable : void
 	param1.data.type != param2.type : error
 	param1 == nil ? 
 		param1 = {new} node {such that it's} data = param2
 	{else}
 		param2 
-			< param1.data ? param1.left [insert] param2
-			> param1.data ? param1.right [insert] param2 
+			< param1.data ?
+				param1.left.parent :: param1
+				param1.left [insert] param2
+			> param1.data ?
+				param1.right.parent :: param1
+				param1.right [insert] param2 
 	:		
+
 	
-binary node [contain] any : bool
+binary node [contain] comparable : bool
 	param1.data.type != param2.data.type ? : no
 	param1 == nil ? : no
 	param1.data == param2 ? : yes
 	param2.data
 		< param1.data ? : param1.left [contain] param2 
 		> param1.data ? : param1.right [contain] param2
+
+binary node [delete] any : void
+	param1.data.type != param2.type ? : error
+	param2 
+		== param1.data ? 
+			param1 [has left child only] ? [replace] param1 [with] param1.left
+			param1 [has right child only] ? [replace] param1 [with] param1.right
+			param1 [has no child] ? [replace] param1 [with] nil
+			param1 [has both child] ? `no idea how to do this
+		< param1.data ? param1.left [delete] param2
+		> param1.data ? param1.right [delete] param2
+		
+			
 	
+[replace] binary node [with] binary node : void
+	param2 [is {not} child of] param1 : error
+	param2.parent :: param1.parent 
+	param2 
+	 	[is left child] ? param2.right :: param1.right
+		[is right child] ? param2.left :: param1.left
+	param1 
+		[is left child] ? param1.parent.left :: param2
+		[is right child] ? param1.parent.right :: param2	
+	:
+	
+binary node [is child of] binary node : bool
+	param1.left.ref == param2.ref : yes
+	param1.right.ref == param2.ref : yes
+	: no
+
+binary node [is left child] : bool
+	: param1.parent.left.reference == param1.reference
+
+binary node [is right child] : bool 
+	: param1.parent.right.reference == param1.reference
+
 `using in main program
 [main]
 	x = {new} binary node
