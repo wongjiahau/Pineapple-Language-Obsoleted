@@ -1,0 +1,130 @@
+`Implementation of generic doubly linked list in Pine Lang
+
+`verbose mode
+node
+	previous {as} node
+	next {as} node
+	data {as} any
+
+linked list
+	head {as} node
+	current {as} node 
+	
+linked list [insert] any {return} void 
+	{if} param1.head {is} nil 
+		param1.head {store} {new} node {such that it's} data {store} param2
+		param1.current {store} param1.head
+		{return}
+	{if} param2.type {not equal} param1.head.data.type 
+		{return} error
+	{if} param1.current {is} param1.head 
+		param1.current {store} {new} node {such that it's} data {store} param2
+		param1.head.next {store} param1.current
+		param1.current.previous {store} param1.head
+	{else}
+		x {as} {new} node {such that it's} data {store} param2
+		x.previous {store} param1.current
+		param1.current.next {store} x
+		param1.current {store} x
+	{return}
+
+linked list [size] {return} int
+	current {as} param1.head
+	count {as} 0 
+	{repeat forever}
+		{if} current {is} nil  {break}
+		count {increment by} 1
+		current {store} current.next
+	{return} count
+
+linked list [delete] any {return} void
+	current {as allias to} param1.head
+	{repeat forever}
+		{if} current.data {is} param2 
+			{if} current.previous.next {is not} nil {then it}{store} current.next
+			{if} current.next.previous {is not} nil {then it}{store} current.previous
+			{return} 
+		
+		{if} current {is} param1.current 
+			{return} error
+		{else}
+			current {as allias to} current.next 
+			
+[clear] linked list : void
+	param1.head {store} nil 
+	param1.current {store} nil
+	{return}
+
+`using the linked list in main 
+[main]
+	x {as} linked list  
+	x [insert] 3
+	x [insert] 5
+	x [delete] 3
+	[clear] x 
+
+`terse mode
+node
+	previous : node
+	next : node
+	data : any
+
+linked list
+	head : node
+	current : node 
+	
+linked list [insert] any : void
+	param1.head == nil ?
+		param1.head = # node | data = param2
+		param1.current = param1.head
+		:
+	param2.type != param1.head.data.type 
+		: error
+	param1.current == param1.head ?
+		param1.current = # node | data = param2
+		param1.head.next = param1.current
+		param1.current.previous = param1.head
+	~
+		x = # node | data = param2
+		x.previous = param1.current
+		param1.current.next = x
+		param1.current = x
+	:
+
+linked list [size] : int
+	current = param1.head
+	count = 0 
+	{repeat forever}
+		current == nil ? {break}
+		count += 1
+		current = current.next
+	: count
+
+linked list [delete] any : void
+	current :: param1.head
+	{repeat forever}
+		current.data == param2 ?
+			current.previous.next != nil ? ;= current.next
+			current.next.previous != nil ? ;= current.previous
+			: 
+		current == param1.current ? : error
+		~ current :: current.next 
+			
+[clear] linked list : void
+	param1.head = nil 
+	param1.current = nil
+	:
+	
+		
+		
+	
+	
+		
+	
+		
+	
+	
+	
+
+ 
+  
