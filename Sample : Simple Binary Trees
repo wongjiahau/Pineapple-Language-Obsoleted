@@ -1,0 +1,33 @@
+binary node
+	data : comparable
+	left : node
+	right : node
+
+binary node [insert] any : void
+	param1.data.type != param2.type : error
+	param1 == nil ? 
+		param1 = {new} node {such that it's} data = param2
+	{else}
+		param2 
+			< param1.data ? param1.left [insert] param2
+			> param1.data ? param1.right [insert] param2 
+	:		
+	
+binary node [contain] any : bool
+	param1.data.type != param2.data.type ? : no
+	param1 == nil ? : no
+	param1.data == param2 ? : yes
+	param2.data
+		< param1.data ? : param1.left [contain] param2 
+		> param1.data ? : param1.right [contain] param2
+	
+`using in main program
+[main]
+	x = {new} binary node
+	x [insert] 5
+	x [insert] 6 
+	x [insert] 9
+	x [contain] 6 ? console\[print] 'yes'
+	
+		
+	
