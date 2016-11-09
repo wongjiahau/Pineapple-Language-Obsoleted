@@ -48,7 +48,7 @@
 >>    `Is "hey" going to be printed out?
 >>```
 ---
->**About Typability**
+>**About Typability**  
 >> C++
 >>
 >> ```java
