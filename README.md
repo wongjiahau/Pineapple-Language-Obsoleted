@@ -1,7 +1,7 @@
-The Pineapple Language
-By: Wong Jia Hau
-3 pillars of the design:
-    1. Readability (easy to read)
+#The Pineapple Language
+###By: Wong Jia Hau
+##3 pillars of the design:
+    ##1. Readability (easy to read)
         -verbose on main actor (e.g. function name should be as verbose as possible)
         -terse on calafe(e.g. if else, return, list statement should be 
                     as terse as possible as they are not the main point)
