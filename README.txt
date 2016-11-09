@@ -1,13 +1,13 @@
 #The Pineapple Language
 ###By: Wong Jia Hau
-##3 pillars of the design:
-    ##1. Readability (easy to read)
+##4 pillars of the design:
+    1. Readability (easy to read)
         -verbose on main actor (e.g. function name should be as verbose as possible)
         -terse on calafe(e.g. if else, return, list statement should be 
                     as terse as possible as they are not the main point)
     2. Typability (easy to type, use as less SHIFT as possible)
     3. Learnability (easy to learn)
-    4. Orderity (prevent bad coding practice) # is this even possible?
+    4. Orderity (prevent bad coding practice) 
 
 Current Rules:
 	1. a class can only contain data, no methods allowed #because it's not necessary
