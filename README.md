@@ -11,7 +11,7 @@
 ---
 ### Sample code 
 *This will be done by comparing C++ with Pineapple*
->**About Readability**
+>**About Readability**  
 >> C++
 >>
 >> ```java
