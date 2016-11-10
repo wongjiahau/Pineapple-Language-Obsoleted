@@ -87,7 +87,8 @@
 >**About Orderity**  
 >*Since operator overloading and logical function name can be build easily, the pineapple code will be as ordered as the thorns of pineapple.*
 
----
+---  
+# For more sample code click [>HERE<] (https://github.com/wongjiahau/Pineapple-Language/blob/master/Tutorial.md)
 ###### Please contact me if you are interested, 011-16372171.
 
 
