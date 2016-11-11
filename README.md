@@ -91,7 +91,9 @@
 # For more sample code click [>HERE<] (https://github.com/wongjiahau/Pineapple-Language/blob/master/Tutorial.md)
 ###### Please contact me if you are interested, 011-16372171.
 
-
+---
+## *The author is inspired by :*
+  ![alt text](https://images-na.ssl-images-amazon.com/images/I/41TINACY3hL._SX258_BO1,204,203,200_.jpg)
 
 
 
