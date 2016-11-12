@@ -10,10 +10,11 @@
 Example :  
 ```  
 `this function will cause side effects
-any [swap] any : void
-	temp = param1
-    param1 = param2
-    param2 = temp
+[swap] any [with] any : void
+    temp : any
+    param1 >> temp
+    param2 >> param1
+    temp >> param2
     :
 
 `this function will not cause side effects
@@ -23,7 +24,7 @@ num [is odd] : bool
 
 `this function is invalid
 [do random stuff to] num : bool
-	param1 = param1 + 1
+	param1 + 1 >> param1
     : param1 + 2
 ```
 ---
@@ -72,9 +73,9 @@ Highest|Prefix Unary|`[print] string : void`
 *Of course the same goes for Symbolic Functions. (Which uses symbol as name).*  
 Example : 
 ```
-a = 'pineapple' 
-b = 2
-c = [substring of] a [from index] b [square][plus] 1 [to] 6
+'pineapple' >> # a
+2 >> # b
+[substring of] a [from index] b [square][plus] 1 [to] 6 >> # c
 ```
 The evaluation order will be :  
    1) `b [square]`  ( let's say it yields x , and the following will also yield x)  
