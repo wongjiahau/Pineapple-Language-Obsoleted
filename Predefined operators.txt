@@ -1,0 +1,3 @@
+<:	<is subset of>
+E:	<is elemebnt of>
+=	<equal>
