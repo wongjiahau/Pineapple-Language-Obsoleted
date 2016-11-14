@@ -1,0 +1,24 @@
+`declaring a mutable variable
+`bnf is <id> ':' <data type>
+`# is the <new> operator, which is mandatory
+# x : int 
+# y : char
+
+
+`assigning values to mutable variable
+`bnf is <value> '>>' <id>
+5 >> x `store 5 into x
+x >> y `store value of x into y
+
+`declaring an immutable variable
+`bnf is <id> ':' <value>
+ pi : 3.1415 
+ name_of_president : 'obama'
+ 
+ 
+`declaring an assigning to a mutable variable at the same time 
+`statically
+5 >> # x : int 
+
+`dynamically
+5 >> # y  `this has an issue, as the type of 'y' should be 'int' or 'num' ? 
