@@ -1,0 +1,18 @@
+`to create a subtype 
+`example in terse mode
+`<it> means it 
+int <: num | [floor]<it> - <it> = 0 
+`in verbose mode
+int <as subset of> num <such that> [floor]<it> [minus] <it> <equals> 0 
+
+`enumeration
+day <:> {mon, tue, wed, thurs, fri, satur, sun}
+
+`<is an element of> in terse mode is 'E:'
+` quote (") is the <of> operator 
+weekday <: day | <it> !E: {satur"day, sun"day} 
+
+
+
+char [is vowel] : bool
+  : param1 E: 'aeiou'
