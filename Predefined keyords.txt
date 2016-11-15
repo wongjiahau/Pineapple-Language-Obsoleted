@@ -1,0 +1,62 @@
+`all keywords can have two forms : symbolic, wordic
+`symbolic is the terse version while wordic is the verbose version
+
+1)non - functional operator
+
+1)a)have wordic form only
+<loop>
+<break> 
+<for>...<in>
+<where>
+<not>
+
+1)b)have symbolic form only
+==========================================================================
+name		symbol		usage
+==========================================================================
+braces		{}		enclosures for array/list
+brackets	[]		enclosures for user-defined function name
+single quotes	''		enclosures for string literal
+underscore	_		as parameter position
+parentheses	()		enclosures for precedence
+dollar		$		char literal prefix
+ellipses	...		for defining range of numbers
+
+
+1)c)have both form
+==============================================================================
+wordic		symbolic	usage
+==============================================================================
+<return>	:		
+<new>		#
+<into>		>>
+<where>		|
+<parameter1>	_1
+<parameter2>	_2
+<parameter3>	_3
+...
+<if>...<then>	...?
+<else>		~
+<'s>		.
+<of>		"
+
+
+
+
+
+
+
+
+
+`functional operator
+`all the predefined keywords are enclosed in angular brackets <>
+
+==========================
+symbolic	wordic
+==========================
++		<plus>
+-		<minus>
+*		<times>
+/		<divide>
+=		<equal>
+
