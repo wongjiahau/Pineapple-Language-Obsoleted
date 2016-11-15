@@ -1,0 +1,65 @@
+`how to define function ? 
+`Rules:
+`1)You dont have to specify the data type of the parameter
+`2)You have to specify the data type of return type
+`3)You can specify constraints for parameter
+`terse mode
+
+_[add]_:num
+	: _1 + _2
+
+`verbose mode
+_ [add] _ <return> num
+	<return> <parameter1> + <parameter2>
+
+`terse mode
+[max of] _ : num 
+	| _1.type = {int} 
+	_1.0 >> # max : int
+	<for> x <in> _1
+		x > max ? @ >> max
+	: max
+
+`swap function
+_ <-> _ : void
+_[swap with]_ : void
+	| _1.type = _2.type
+	_1 >> # temp
+	_2 >> _1
+	temp >> _2
+	:
+
+`using the swap function
+55 >> # x
+66 >> # y
+x <-> y
+
+`note that the constraint is not neccessary to be declared
+`it just provide it with more secure
+_ [in reverse] : _
+	| _1 <: {} 
+	| _1.type = _:.type 
+	_1 >> # result
+	<for> x <in> {0 .. result[length]}
+		result.x <-> result.(-x-1)
+	: result
+
+`verbose mode
+_ [in reverse] <return> _
+	<where> <parameter1> <is a> <list>
+	<where> <parameter1>.type <equal> <return value>.type
+	<store> <parameter1> <into> <new> result
+	<for> x <in> {0 <to> result[length]}
+		result.x [swap with] result.(-x-1)
+	<return> result
+		
+		
+		
+	
+		
+
+		
+		
+
+
+
