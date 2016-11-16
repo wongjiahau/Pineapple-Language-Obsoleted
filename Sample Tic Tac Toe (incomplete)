@@ -1,0 +1,31 @@
+`this program is simple 2 player tic tac toe program
+
+move \\ {top left, top, top right, left, middle, right, bottom left, bottom, bottom right}
+player \\ {one, two}
+[main]
+	# player1_move : move
+	# player2_move : move
+	# game_board : {move}
+	player.one >> # current_player : player 
+	[loop]	
+		[display gameboard]
+		[display instructions]
+		console\[read] >> current_player
+		[check] game_board [if] current_player [is valid] ? 
+			[place] current_player_move [onto] game_board
+			[check in] game_board [if somebody won] ? <break>
+			player.one >> current_player
+		~ <continue>
+	[display] current_player [is winner] 
+
+
+[display gameboard] : void
+	console\[print] 
+	'
+	[1][2][3]
+	[4][5][6] 
+	[7][8][9]	
+	'
+
+[display instructions] : void
+	console\[print] 'Place a move (1-9)'
