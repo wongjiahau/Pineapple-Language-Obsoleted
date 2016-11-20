@@ -21,7 +21,7 @@ _ [add] _ <return> num
 	: max
 
 `swap function
-_ <-> _ : void
+_ [<->] _ : void
 _[swap with]_ : void
 	| _1.type = _2.type
 	_1 >> # temp
@@ -53,8 +53,15 @@ _ [in reverse] <return> _
 		result.x [swap with] result.(-x-1)
 	<return> result
 		
-		
-		
+`more powerful rules
+`ultra strong typing
+`you can set constraint for literals
+binary
+	| <it>.literal [start with] '0b'
+	| <it> [matches regex] '[01]+'
+
+binary [+] binary : binary 
+	```function body
 	
 		
 
