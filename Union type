@@ -1,0 +1,9 @@
+`aka bidirectional hash
+day
+  literal | int 
+  mon     | 1
+  tue     | 2 
+  
+[main]
+  current day : day
+  mon"day >> current day
